@@ -1,0 +1,209 @@
+{
+  "info": {
+    "title": "API REST documentation",
+    "version": "1.0.0",
+    "license": {
+      "name": "ISC"
+    },
+    "description": "API REST pour gérer des utilisateurs"
+  },
+  "basePath": "/api/v1",
+  "host": "localhost:8080",
+  "tags": [
+    {
+      "name": "members",
+      "description": "Méthodes permettant de gérer les utilisateurs"
+    }
+  ],
+  "paths": {
+    "members/{id}": {
+      "get": {
+        "tags": ["members"],
+        "summary": "Trouver un membre par son ID",
+        "consumes": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful operation",
+            "schema": {
+              "$ref": "#/definitions/ApiSuccess"
+            }
+          },
+          "400": {
+            "description": "Bad request",
+            "schema": {
+              "$ref": "#/definitions/ApiError"
+            }
+          }
+        }
+      },
+      "put": {
+        "tags": ["members"],
+        "summary": "Modifier un membre par son ID",
+        "consumes": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "ID d'un membre",
+            "type": "integer",
+            "required": true
+          },
+          {
+            "name": "name",
+            "in": "body",
+            "description": "Nom d'un membre",
+            "type": "string",
+            "required": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful operation",
+            "schema": {
+              "$ref": "#/definitions/ApiSuccess"
+            }
+          },
+          "400": {
+            "description": "Bad request",
+            "schema": {
+              "$ref": "#/definitions/ApiError"
+            }
+          }
+        }
+      },
+      "delete": {
+        "tags": ["members"],
+        "summary": "Supprimer un membre par son ID",
+        "consumes": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful operation",
+            "schema": {
+              "$ref": "#/definitions/ApiSuccess"
+            }
+          },
+          "400": {
+            "description": "Bad request",
+            "schema": {
+              "$ref": "#/definitions/ApiError"
+            }
+          }
+        }
+      }
+    },
+    "members": {
+      "get": {
+        "tags": ["members"],
+        "summary": "Voir tous les membres",
+        "consumes": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "max",
+            "in": "query",
+            "required": false
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful operation",
+            "schema": {
+              "$ref": "#/definitions/ApiSuccess"
+            }
+          },
+          "400": {
+            "description": "Bad request",
+            "schema": {
+              "$ref": "#/definitions/ApiError"
+            }
+          }
+        }
+      },
+      "post": {
+        "tags": ["members"],
+        "summary": "Ajouter un membre",
+        "consumes": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "name",
+            "in": "body",
+            "required": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful operation",
+            "schema": {
+              "$ref": "#/definitions/ApiSuccess"
+            }
+          },
+          "400": {
+            "description": "Bad request",
+            "schema": {
+              "$ref": "#/definitions/ApiError"
+            }
+          }
+        }
+      }
+    }
+  },
+  "definitions": {
+    "ApiSuccess": {
+      "type": "object",
+      "properties": {
+        "status": {
+          "type": "string",
+          "description": "success"
+        },
+        "result": {
+          "type": "object",
+          "properties": {
+            "id": {
+              "type": "integer",
+              "format": "int64"
+            },
+            "name": {
+              "type": "string"
+            }
+          }
+        }
+      }
+    },
+    "ApiError": {
+      "type": "object",
+      "properties": {
+        "status": {
+          "type": "string",
+          "description": "error"
+        },
+        "message": {
+          "type": "string"
+        }
+      }
+    }
+  },
+  "swagger": "2.0"
+}

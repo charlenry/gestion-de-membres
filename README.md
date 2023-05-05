@@ -5,7 +5,7 @@ Cette application web est en deux parties : une partie backend et une partie fro
 ## Installation
 
 ### Le backend
-Le backend est constitué d'un serveur API connecté à une base de données MySQL. Pour les besoins de cette application web, il est nécessaire d'installer un serveur web et un serveur de base de données. J'ai utilisé la suite logicielle `XAMPP`. Une fois XAMPP installé, il faut importer la base de données appelée `nodejs` contenant une table appelée `members`. Le fichier `nodejs.sql` permet de faire cette importation et se trouve dans le dossier `Backend`.
+Le backend est constitué d'un serveur API connecté à une base de données MySQL. Pour les besoins de cette application web, il est nécessaire d'installer un serveur web et un serveur de base de données. J'ai utilisé pour cela la suite logicielle `XAMPP`. Une fois XAMPP installé et que le serveur Apache ainsi que le serveur MySQL sont démarrés, il faut importer la base de données appelée `nodejs` contenant une table appelée `members`. Le fichier `nodejs.sql` permet de faire cette importation et se trouve dans le dossier `Backend`.
 
 Puis se rendre dans le dossier `Backend` via un terminal et taper `npm install`. Ensuite, taper `npm start`. Le serveur va démarrer à l'adresse `http://localhost:8080`.
 

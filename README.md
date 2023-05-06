@@ -20,6 +20,6 @@ Se rendre dans le dossier `Frontend` via un autre terminal et taper `npm install
 
 
 ### Utilisation de l'application web
-Une fois que vous êtes à l'adresse `http://localhost:8081`, vous avez accès à la liste des membres, chacun ayant un ID et un nom. Vous pouvez cliquer sur un membre pour voir ses informations en particulier. Vous avez un bouton `Modifier` pour modifier le nom du membre. Dans la page de modification, vous pouvez également supprimer le membre. Enfin dans la liste des membres, vous pouvez aussi ajouter un nouveau membre.
+Une fois que vous êtes à l'adresse `http://localhost:8081`, vous avez accès à la liste des membres, chacun ayant un ID et un nom. Vous pouvez aussi préciser le nombre de membres que vous souhaitez voir affiché. Par exemple, si vous souhaitez voir les 5 premiers membres, saisissez dans la barre d'adresse du navigateur: `http://localhost:8081/members?max=5`. Aussi, vous pouvez cliquer sur un membre pour voir ses informations en particulier. Vous avez un bouton `Modifier` pour modifier le nom du membre. Dans la page de modification, vous pouvez également supprimer le membre. Enfin dans la liste des membres, vous pouvez ajouter un nouveau membre.
 
 
